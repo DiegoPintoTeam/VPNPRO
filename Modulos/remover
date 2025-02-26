@@ -32,7 +32,7 @@ if [[ "$resp" = "1" ]]; then
 clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%32s%s%-13s\n' "                  BORRAR UN USUARIO  " ; tput sgr0
 echo""
-_userT=$(awk -F: '$$3 >= 500 {print $1}' /etc/passwd | grep -v "nobody" | sort)
+_userT=$(awk -F: '$3 >= 500 {print $1}' /etc/passwd | grep -v "nobody" | sort)
 i=0
 unset _userPass
 while read _user; do
@@ -43,7 +43,7 @@ while read _user; do
 	_userPass+="\n${_oP}:${_user}"
 done <<< "${_userT}"
 echo ""
-num_user=$(awk -F: '$$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
+num_user=$(awk -F: '$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
 echo -ne "\033[1;32mEscriba o selecione usuario \033[1;31m[\033[1;31m1\033[1;31m-\033[1;31m$num_user\033[1;31m]\033[1;32m: " ; read option
 user=$(echo -e "${_userPass}" | grep -E "\b$option\b" | cut -d: -f2)
 if [[ -z $option ]]; then
@@ -100,7 +100,7 @@ elif [[ "$resp" = "2" ]]; then
 	echo -ne "\033[1;31mDESEA BORRAR TODOS USUARIOS [Si/No]: ";read opc	
 	if [[ "$opc" = "Si" ]]; then
 	echo -e "\n\033[1;32mEspere\033[1;32m.\033[1;32m.\033[1;32m.\033[0m"
-		for user in $(cat /etc/passwd |awk -F : '$$3 >= 500 {print $1}' |grep -vi "nobody"); do
+		for user in $(cat /etc/passwd |awk -F : '$3 >= 500 {print $1}' |grep -vi "nobody"); do
 			pkill -f $user > /dev/null 2>&1
 			deluser --force $user > /dev/null 2>&1
         if [[ -e /etc/openvpn/server.conf ]]; then

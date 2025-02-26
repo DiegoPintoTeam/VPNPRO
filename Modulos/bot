@@ -732,7 +732,7 @@ infovps() {
     [[ -e /etc/openvpn/openvpn-status.log ]] && _onop=$(grep -c "10.8.0" /etc/openvpn/openvpn-status.log) || _onop="0"
     [[ -e /etc/default/dropbear ]] && _drp=$(ps aux | grep dropbear | grep -v grep | wc -l) _ondrp=$(($_drp - 1)) || _ondrp="0"
     _on=$(($_ons + $_onop + $_ondrp))
-    total=$(awk -F: '$$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
+    total=$(awk -F: '$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
     system=$(cat /etc/issue.net)
     uso=$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')
     cpucores=$(grep -c cpu[0-9] /proc/stat)
@@ -1056,7 +1056,7 @@ fun_exp_user() {
 relatorio_rev() {
     if [[ "${callback_query_from_id[$id]}" = "$id_admin" ]]; then
         _ons=$(ps -x | grep sshd | grep -v root | grep priv | wc -l)
-        _tuser=$(awk -F: '$$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
+        _tuser=$(awk -F: '$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
         [[ -e /etc/openvpn/openvpn-status.log ]] && _onop=$(grep -c "10.8.0" /etc/openvpn/openvpn-status.log) || _onop="0"
         [[ -e /etc/default/dropbear ]] && _drp=$(ps aux | grep dropbear | grep -v grep | wc -l) _ondrp=$(($_drp - 1)) || _ondrp="0"
         _onli=$(($_ons + $_onop + $_ondrp))

@@ -220,7 +220,7 @@ _system=$(printf '%-14s' "$system")
 _hora=$(printf '%(%H:%M:%S)T')
 _onlin=$(printf '%-5s' "$_onli")
 _userexp=$(printf '%-5s' "$_expuser")
-_tuser=$(awk -F: '$$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
+_tuser=$(awk -F: '$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[41;1;37m       ⇱ VPNPRO MANAGER ⇲       \E[0m"
@@ -336,7 +336,7 @@ _system=$(printf '%-14s' "$system")
 _hora=$(printf '%(%H:%M:%S)T')
 _onlin=$(printf '%-5s' "$_onli")
 _userexp=$(printf '%-5s' "$_expuser")
-_tuser=$(awk -F: '$$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
+_tuser=$(awk -F: '$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[41;1;37m       ⇱ VPNPRO MANAGER ⇲       \E[0m"

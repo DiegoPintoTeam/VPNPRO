@@ -20,7 +20,7 @@ while read _user; do
     printf '%-60s%s\n' "$suser" "$ssenha"
 	_userPass+="\n${_oP}:${_user}"
 done <<< "${_userT}"
-num_user=$(awk -F: '$$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
+num_user=$(awk -F: '$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
 echo ""
 echo -ne "\033[1;32mEscriba o seleccione un usuario \033[1;31m[\033[1;31m1\033[1;31m-\033[1;31m$num_user\033[1;31m]\033[1;32m: " ; read option
 user=$(echo -e "${_userPass}" | grep -E "\b$option\b" | cut -d: -f2)

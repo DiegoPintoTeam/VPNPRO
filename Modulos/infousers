@@ -4,7 +4,7 @@ clear
 echo -e "\E[44;1;37m USUARIO         CONTRASEÑA    LIMITE     VIGENTE \E[0m"
 echo ""
 [[ ! -e /bin/versao ]] && rm -rf /bin/menu
-for users in `awk -F : '$$3 >= 500 {print $1}' /etc/passwd |sort |grep -v "nobody" |grep -vi polkitd |grep -vi system-`
+for users in `awk -F : '$3 >= 500 {print $1}' /etc/passwd |sort |grep -v "nobody" |grep -vi polkitd |grep -vi system-`
 do
 if [[ $(grep -cw $users $HOME/usuarios.db) == "1" ]]; then
     lim=$(grep -w $users $HOME/usuarios.db | cut -d' ' -f2)
@@ -39,7 +39,7 @@ echo -e "\033[1;32m$Usuario \033[1;32m$Senha \033[1;32m$Limite \033[1;32m$Data\0
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 done
 echo ""
-_tuser=$(awk -F: '$$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
+_tuser=$(awk -F: '$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
 _ons=$(ps -x | grep sshd | grep -v root | grep priv | wc -l)
 [[ "$(cat /etc/VPNPro/Exp)" != "" ]] && _expuser=$(cat /etc/VPNPro/Exp) || _expuser="0"
 [[ -e /etc/openvpn/openvpn-status.log ]] && _onop=$(grep -c "10.8.0" /etc/openvpn/openvpn-status.log) || _onop="0"
