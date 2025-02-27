@@ -10,8 +10,8 @@ while read _user; do
 	i=$(expr $i + 1)
 	_oP=$i
 	[[ $i == [1-9] ]] && i=0$i && oP+=" 0$i"
-	if [[ -e "/etc/VPNPro/alterarsenha/$_user" ]]; then
-		_senha="$(cat /etc/VPNPro/alterarsenha/$_user)"
+	if [[ -e "/etc/VPNPro/senha/$_user" ]]; then
+		_senha="$(etc/VPNPro/senha/$_user)"
 	else
 		_senha='Null'
 	fi
@@ -47,7 +47,7 @@ else
 			then
 				echo "$user:$password" | chpasswd
 				tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "Contraseña $user ha sido cambiada: $password" ; echo "" ; tput sgr0
-				echo "$password" > /etc/VPNPro/alterarsenha/$user
+				echo "$password" > /etc/VPNPro/senha/$user
 				exit 1
 			else
 				echo ""
@@ -55,7 +55,7 @@ else
 				pkill -f $user
 				echo "$user:$password" | chpasswd
 				tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "contraseña de $user ha sido cambiada: $password" ; echo "" ; tput sgr0
-				echo "$password" > /etc/VPNPro/alterarsenha/$user
+				echo "$password" > /etc/VPNPro/senha/$user
 				exit 1
 			fi
 		fi
