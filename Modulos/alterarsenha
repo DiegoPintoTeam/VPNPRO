@@ -11,13 +11,13 @@ while read _user; do
 	_oP=$i
 	[[ $i == [1-9] ]] && i=0$i && oP+=" 0$i"
 	if [[ -e "/etc/VPNPro/alterarsenha/$_user" ]]; then
-		_alterarsenha="$(cat /etc/VPNPro/alterarsenha/$_user)"
+		_senha="$(cat /etc/VPNPro/alterarsenha/$_user)"
 	else
-		_alterarsenha='Null'
+		_senha='Null'
 	fi
 	suser=$(echo -e "\033[1;31m[\033[1;32m$i\033[1;31m] \033[1;32m- \033[1;32m$_user\033[0m")
-    salterarsenha=$(echo -e "\033[1;31mCONTRASEÑA\033[1;32m: $_alterarsenha")
-    printf '%-60s%s\n' "$suser" "$salterarsenha"
+    ssenha=$(echo -e "\033[1;31mCONTRASEÑA\033[1;32m: $_senha")
+    printf '%-60s%s\n' "$suser" "$ssenha"
 	_userPass+="\n${_oP}:${_user}"
 done <<< "${_userT}"
 num_user=$(awk -F: '$3 >= 500 {print $1}' /etc/passwd | grep -v nobody | wc -l)
