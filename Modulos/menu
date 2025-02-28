@@ -81,7 +81,7 @@ rm -rf $HOME/speed
 #limiter
 function limit1 () {
    clear
-   echo -e "\n\033[1;32mINICIANDO O LIMITER... \033[0m"
+   echo -e "\n\033[1;32mINICIANDO LIMITER... \033[0m"
    echo ""
    fun_bar 'screen -dmS limiter limiter' 'sleep 3'
    [[ $(grep -wc "limiter" /etc/autostart) = '0' ]] && {
@@ -96,7 +96,7 @@ function limit1 () {
 }
 function limit2 () {
    clear
-   echo -e "\033[1;32mPARANDO O LIMITER... \033[0m"
+   echo -e "\033[1;32mDETENIENDO LIMITER... \033[0m"
    echo ""
    fun_stplimiter () {
       sleep 1
@@ -108,7 +108,7 @@ function limit2 () {
       sleep 1
    }
    fun_bar 'fun_stplimiter' 'sleep 3'
-   echo -e "\n\033[1;31m LIMITER PARADO !\033[0m"
+   echo -e "\n\033[1;31m LIMITER DETENIDO !\033[0m"
    sleep 3
    menu
 }
@@ -118,7 +118,7 @@ function limit_ssh () {
 #onlineapp
 function onapp1 () {
    clear
-   echo -e "\n\033[1;32mINICIANDO O ONLINE APP... \033[0m"
+   echo -e "\n\033[1;32mINICIANDO ONLINE APP... \033[0m"
    echo ""
    apt install apache2 -y > /dev/null 2>&1
    sed -i "s/Listen 80/Listen 8888/g" /etc/apache2/ports.conf >/dev/null 2>&1
@@ -141,7 +141,7 @@ function onapp1 () {
 }
 function onapp2 () {
    clear
-   echo -e "\033[1;32mPARANDO O ONLINE APP... \033[0m"
+   echo -e "\033[1;32mDETENIENDO ONLINE APP... \033[0m"
    echo ""
    fun_stponlineapp () {
       sleep 1
@@ -154,7 +154,7 @@ function onapp2 () {
    }
    fun_bar 'fun_stponlineapp' 'sleep 3'
    rm -rf /var/www/html/server >/dev/null 2>&1
-   echo -e "\n\033[1;31m ONLINE APP PARADO !\033[0m"
+   echo -e "\n\033[1;31m ONLINE APP DETENIDO !\033[0m"
    sleep 3
    menu
 }
@@ -253,13 +253,13 @@ case "$x" in
    22)
    clear
    addhost
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara volver al menu \033[1;32mMENU!\033[0m"; read
    menu2
    ;;
    23)
    clear
    delhost
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara volver al menu \033[1;32mMENU!\033[0m"; read
    menu2
    ;;
    24)
@@ -364,12 +364,12 @@ case "$x" in
    1 | 01)
    clear
    criarusuario
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara volver al menu \033[1;32mMENU!\033[0m"; read
    ;;
    2 | 02)
    clear
    criarteste
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara volver al menu \033[1;32mMENU!\033[0m"; read
    ;;
    3 | 03)
    clear
@@ -379,7 +379,7 @@ case "$x" in
    4 | 04)
    clear
    sshmonitor
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara volver al menu \033[1;32mMENU!\033[0m"; read
    ;;      
    5 | 05)
    clear
@@ -405,7 +405,7 @@ case "$x" in
    9 | 09)
    clear
    infousers
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara volver al menu \033[1;32mMENU!\033[0m"; read
    ;;
    10)
    conexao
@@ -414,7 +414,7 @@ case "$x" in
    11)
    clear
    velocity
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara volver al menu \033[1;32mMENU!\033[0m"; read
    ;;
    12)
    clear
@@ -430,11 +430,11 @@ case "$x" in
    14)
    clear
    otimizar
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara volver al menu \033[1;32mMENU!\033[0m"; read
    ;;
    15)
    userbackup
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara volver al menu \033[1;32mMENU!\033[0m"; read
    ;;
    16)
    swapmemory
@@ -453,7 +453,7 @@ case "$x" in
    20)
    clear
    detalhes
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara volver al menu \033[1;32mMENU!\033[0m"; read
    ;;
    21)
    menu2
