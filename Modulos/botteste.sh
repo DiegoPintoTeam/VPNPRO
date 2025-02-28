@@ -52,11 +52,11 @@
     sleep 1
     screen -dmS bot_teste ./botssh $token> /dev/null 2>&1
     clear
-    echo "BOT ATIVADO"
+    echo "BOT ACTIVADO"
     menu
 } || {
     screen -r -S "bot_teste" -X quit
     clear
-    echo "BOT DESATIVADO"
+    echo "BOT DESACTIVADO"
     menu
 }

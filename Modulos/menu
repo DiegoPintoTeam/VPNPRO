@@ -172,7 +172,7 @@ function autoexec () {
       echo ""
       fun_bar 'offautmenu'
       echo ""
-      echo -e "\033[1;31mAUTO EXECUÇÃO DESATIVADO!\033[0m"
+      echo -e "\033[1;31mAUTO EXECUÇÃO DESACTIVADO!\033[0m"
       sleep 1.5s
       menu2
    else
@@ -185,7 +185,7 @@ function autoexec () {
       echo ""
       fun_bar 'autmenu'
       echo ""
-      echo -e "\033[1;32mAUTO EXECUÇÃO ATIVADO!\033[0m"
+      echo -e "\033[1;32mAUTO EXECUÇÃO ACTIVADO!\033[0m"
       sleep 1.5s
       menu2
    fi
@@ -423,7 +423,7 @@ case "$x" in
    ;;
    13)
    clear
-   echo -e "\033[1;32mPARA SAIR CLICK CTRL + C\033[1;36m"
+   echo -e "\033[1;32mPARA SALIR CLICK CTRL + C\033[1;36m"
    sleep 4
    nload
    ;;

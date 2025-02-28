@@ -217,7 +217,7 @@ domain_port_check() {
         sleep 2
     else
         echo -e "${Error} ${RedBG} Certifique-se de que o registro A / AAAA correto seja adicionado ao nome de domínio, caso contrário, não será possível conectar-se normalmente ${Font}"
-        echo -e "${Error} ${RedBG} Se o IP de resolução DNS do nome de domínio não corresponder ao IP da máquina, o aplicativo de certificado SSL falhará. Deseja continuar a instalação?（Y/N）[N]${Font}" && read -r install
+        echo -e "${Error} ${RedBG} Se o IP de resolução DNS do nome de domínio não corresponder ao IP da máquina, o aplicativo de certificado SSL falhará. Desea continuar a instalação?（Y/N）[N]${Font}" && read -r install
         case $install in
         [yY][eE][sS] | [yY])
             echo -e "${GreenBG} Continue a instalar ${Font}"
@@ -292,7 +292,7 @@ trojan_reset() {
     read -rp "Por favor, digite a senha (Trojan-Go), ou padrão é aleatório :" tjpasswd
     [[ -z ${tjpasswd} ]] && tjpasswd=$(head -n 10 /dev/urandom | md5sum | head -c ${random_num})
     echo -e "${OK} ${GreenBG} Trojan-Go 密码: ${tjpasswd} ${Font}"
-    read -rp "Deseja habilitar o suporte ao modo WebSocket (Y/N) [N]:" trojan_ws_mode
+    read -rp "Desea habilitar o suporte ao modo WebSocket (Y/N) [N]:" trojan_ws_mode
     [[ -z ${trojan_ws_mode} ]] && trojan_ws_mode=false
     case $trojan_ws_mode in
     [yY][eE][sS] | [yY])

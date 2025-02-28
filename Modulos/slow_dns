@@ -20,7 +20,7 @@ configdns() {
 echo -e "${CORTITLE}           VPNPRO SLOWDNS (Beta)            ${SCOLOR}"
 installslowdns() {
     echo -e "\n${YELLOW}ESTEJA CIENTE QUE ESSE METODO AINDA\nESTA NA FASE BETA E QUE ALEM DE SER\nLENTO PODE NAO FUNCIONAR PERFEITAMENTE ! ${SCOLOR}\n"
-    echo -ne "${GREEN}DESEJA CONTINUAR A INSTALACAO ? ${YELLOW}[s/n]:${SCOLOR} "
+    echo -ne "${GREEN}DESEA CONTINUAR A INSTALACAO ? ${YELLOW}[s/n]:${SCOLOR} "
     read resp
     [[ "$resp" != @(s|sim|S|SIM) ]] && {
         echo -e "\n${RED}Retornando...${SCOLOR}"
@@ -39,7 +39,7 @@ initslow() {
         echo -e "\n${RED}[${CYAN}1${RED}] ${YELLOW}PARAR O SLOWDNS${SCOLOR}"
         echo -e "${RED}[${CYAN}2${RED}] ${YELLOW}REMOVER O SLOWDNS${SCOLOR}"
         echo -e "${RED}[${CYAN}3${RED}] ${YELLOW}EXIBIR INFORMACOES${SCOLOR}"
-        echo -e "${RED}[${CYAN}0${RED}] ${YELLOW}VOLTAR${SCOLOR}"
+        echo -e "${RED}[${CYAN}0${RED}] ${YELLOW}VOLVER${SCOLOR}"
         echo -ne "\n${GREEN}INFORME UMA OPCAO${SCOLOR}: "
         read op
         if [[ "$op" == '1' ]]; then
@@ -47,7 +47,7 @@ initslow() {
             screen -wipe >/dev/null 2>&1
             sed -i '/5300/d' /etc/autostart >/dev/null 2>&1
             sed -i '/slow_dns/d' /etc/VPNPro/dns/autodns >/dev/null 2>&1
-            echo -e "\n${RED}SLOWDNS DESATIVADO !${SCOLOR}"
+            echo -e "\n${RED}SLOWDNS DESACTIVADO !${SCOLOR}"
             sleep 2
             conexao
         elif [[ "$op" == '2' ]]; then
@@ -92,7 +92,7 @@ initslow() {
         echo -e "${RED}[${CYAN}2${RED}] ${YELLOW}SLOWDNS SSL${SCOLOR}"
         echo -e "${RED}[${CYAN}3${RED}] ${YELLOW}SLOWDNS SSLH${SCOLOR}"
         echo -e "${RED}[${CYAN}4${RED}] ${YELLOW}SLOWDNS OPENVPN${SCOLOR}"
-        echo -e "${RED}[${CYAN}0${RED}] ${YELLOW}VOLTAR${SCOLOR}"
+        echo -e "${RED}[${CYAN}0${RED}] ${YELLOW}VOLVER${SCOLOR}"
         echo -ne "\n${GREEN}INFORME UMA OPCAO${SCOLOR}: "
         read opcc
         if [[ "$opcc" == '1' ]]; then
@@ -130,7 +130,7 @@ initslow() {
         screen -dmS slow_dns $DIR/dns-server -udp :5300 -privkey-file $DIR/server.key ${ns} 0.0.0.0:${ptdns} >/dev/null 2>&1
         keypub=$(cat $DIR/server.pub)
         cd $HOME
-        echo -e "\n${YELLOW}ATIVADO O SLOWDNS...${SCOLOR}"
+        echo -e "\n${YELLOW}ACTIVADO O SLOWDNS...${SCOLOR}"
         [[ ! -e /etc/iptables/rules.v4 ]] && {
             configdns > /dev/null 2>&1
             DEBIAN_FRONTEND=noninteractive apt install -y iptables-persistent >/dev/null 2>&1
@@ -143,7 +143,7 @@ initslow() {
         chmod 777 /etc/VPNPro/dns/autodns >/dev/null 2>&1
         echo "ss -lu|grep -w '5300' || /etc/VPNPro/dns/autodns" >>/etc/autostart
         tmx='curl -sO https://raw.githubusercontent.com/DiegoPintoTeam/VPNPRO/main/Install/slowdns && chmod +x slowdns && ./slowdns'
-        echo -e "\n${GREEN}SLOWDNS ATIVADO !${SCOLOR}"
+        echo -e "\n${GREEN}SLOWDNS ACTIVADO !${SCOLOR}"
         echo -e "\n${YELLOW}COMANDO TERMUX${SCOLOR}: ${tmx} ${ns} ${keypub}"
         echo -ne "\n${RED}ENTER${YELLOW} para retornar ao${GREEN} MENU!${SCOLOR}"
         read
