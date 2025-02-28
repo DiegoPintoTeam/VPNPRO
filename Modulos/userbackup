@@ -66,9 +66,9 @@ backbot=$1
 	}
 	echo -e "\E[44;1;37m          ADMINISTRAR BACKUP DE SEGURIDAD         \E[0m"
 	echo ""
-	echo -e "\033[1;31m[\033[1;32m1\033[1;31m] \033[1;32m➩ \033[1;32mCREAR BACKUP"
-	echo -e "\033[1;31m[\033[1;32m2\033[1;31m] \033[1;32m➩ \033[1;32mRESTAURAR BACKUP"
-	echo -e "\033[1;31m[\033[1;32m0\033[1;31m] \033[1;32m➩ \033[1;32mVOLVER\033[1;32m"
+	echo -e "\033[1;31m[\033[1;32m1\033[1;31m] \033[1;32m➩ \033[1;32mCREAR BACKUP \033[1;32m"
+	echo -e "\033[1;31m[\033[1;32m2\033[1;31m] \033[1;32m➩ \033[1;32mRESTAURAR BACKUP \033[1;32m"
+	echo -e "\033[1;31m[\033[1;32m0\033[1;31m] \033[1;32m➩ \033[1;32mVOLVER \033[1;32m"
 	echo ""
 	echo -ne "\033[1;31mOPCION \033[1;31m?\033[1;32m: "; read opcao
 	if [[ "$opcao" = '1' ]]; then
