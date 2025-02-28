@@ -126,13 +126,7 @@ if [[ "$resposta" = '1' ]]; then
     cd /bin/ >/dev/null 2>&1
     rm v2raymanager >/dev/null 2>&1
     wget https://raw.githubusercontent.com/DiegoPintoTeam/VPNPRO/main/Modulos/v2raymanager >/dev/null 2>&1
-    wget https://github.com/DiegoPintoTeam/VPNPRO/blob/main/Modulos/botteste.sh >/dev/null 2>&1
     chmod 777 v2raymanager >/dev/null 2>&1
-    chmod 777 botteste.sh >/dev/null 2>&1
-    mkdir $HOME/BOT >/dev/null 2>&1
-    cd $HOME/BOT
-    wget https://raw.githubusercontent.com/DiegoPintoTeam/VPNPRO/main/Sistema/ShellBot.sh >/dev/null 2>&1
-    chmod 777 ShellBot.sh >/dev/null 2>&1
     cd >/dev/null 2>&1
     #-----------------------------------------------------------------------------------------------------------------
     echo -e "\n\033[1;32mKEY VALIDA!\033[1;32m"
@@ -237,13 +231,7 @@ elif [[ "$resposta" = '2' ]]; then
     cd /bin/ >/dev/null 2>&1
     rm v2raymanager >/dev/null 2>&1
     wget https://raw.githubusercontent.com/DiegoPintoTeam/VPNPRO/main/Modulos/v2raymanager >/dev/null 2>&1
-    wget https://github.com/DiegoPintoTeam/VPNPRO/blob/main/Modulos/botteste.sh >/dev/null 2>&1
     chmod 777 v2raymanager >/dev/null 2>&1
-    chmod 777 botteste.sh >/dev/null 2>&1
-    mkdir $HOME/BOT >/dev/null 2>&1
-    cd $HOME/BOT
-    wget https://github.com/DiegoPintoTeam/VPNPRO/blob/main/Modulos/ShellBot.sh >/dev/null 2>&1
-    chmod 777 ShellBot.sh >/dev/null 2>&1
     cd >/dev/null 2>&1
     #-----------------------------------------------------------------------------------------------------------------
     echo -e "\n\033[1;32mKEY VALIDA!\033[1;32m"
