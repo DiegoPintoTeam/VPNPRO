@@ -54,7 +54,7 @@ rm -rf install && wget https://raw.githubusercontent.com/DiegoPintoTeam/VPNPRO/m
 fun_bar 'fun_update'
 sleep 3
 echo ""
-echo -e "\033[0;36mSLOWDNS ATUALIZADO COM SUCESSO! [✔]\033[0m"
+echo -e "\033[0;36mSLOWDNS ATUALIZADO CON EXITO! [✔]\033[0m"
 echo ""
 sleep 3
 echo -e "  \033[1;33mPARA ABRIR O MENU USE: \033[1;37m\033sslowdns\033[1;33m"
