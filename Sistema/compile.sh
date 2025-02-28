@@ -18,7 +18,7 @@ else
 tput setaf 2 ; tput bold ; echo ""
 echo -e "\033[1;36mEste é um script que compila e instala automaticamente o programa BadVPN em servidores Debian e Ubuntu para ativar o encaminhamento UDP na porta 7300, usado por programas como HTTP Injector da Evozi. Permitindo assim a utilização do protocolo UDP para jogos online, chamadas VoIP e outras coisas interessantes.\033[0m"
 echo "" ; tput sgr0
-read -p "Deseja continuar? [s/n]: " -e -i n resposta
+read -p "Desea continuar? [s/n]: " -e -i n resposta
 if [[ "$resposta" = 's' ]]; then
 	echo ""
 	echo -e "\033[1;31mA instalação pode demorar bastante... seja paciente!\033[0m"

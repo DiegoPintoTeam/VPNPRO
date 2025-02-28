@@ -6,5 +6,5 @@
     screen -dmS bot_teste ./botssh $token > /dev/null 2>&1
 } || {
     screen -r -S "bot_teste" -X quit
-    clear && echo "BOT DESATIVADO"
+    clear && echo "BOT DESACTIVADO"
 }
